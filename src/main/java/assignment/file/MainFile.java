@@ -1,7 +1,6 @@
 package assignment.file;
 import java.io.File;
 import java.util.*;
-import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class MainFile 
@@ -25,19 +24,19 @@ public class MainFile
         	String s = ""+e;
         	logger.info(s);
         }
-        String str1[] = str.split("[, . ' ']+");
+        String[] str1 = str.split("[, . ' ']+");
         for(int i =0;i<str1.length;i++)
         {
         	int count =1;
         	for(int j=i+1;j<str1.length;j++)
         	{
-        		if(str1[i].equals(str1[j]) && str1[i] != ".")
+        		if(str1[i].equals(str1[j]) && !str1[i].equals("."))
         		{
         			count++;
         			str1[j] = ".";
         		}
         	}
-        	if(str1[i] != ".")
+        	if(!str1[i].equals("."))
         	{
         		map.put(str1[i],count);
         	}        	
