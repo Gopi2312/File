@@ -24,7 +24,7 @@ public class MainFile
         	String s = ""+e;
         	logger.info(s);
         }
-        String[] str1 = str.split("[, . ' ']+");
+        String[] str1 = str.split(" ");
         for(int i =0;i<str1.length;i++)
         {
         	int count =1;
@@ -44,11 +44,9 @@ public class MainFile
         PriorityQueue<Map.Entry<String, Integer>> queue = new PriorityQueue<>((a, b) -> {
             return b.getValue() - a.getValue();
         });
-        {
-            for (HashMap.Entry<String, Integer> e : map.entrySet()) {
+            for (Map.Entry<String, Integer> e : map.entrySet()) {
                 queue.add(e);
             }
            logger.log(Level.INFO,()-> " " + queue );
-        }
     }
 }
