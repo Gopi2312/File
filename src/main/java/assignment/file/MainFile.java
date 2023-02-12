@@ -12,7 +12,7 @@ public class MainFile
     	Map<String,Integer> map = new HashMap<>();
         try 
         {
-        	File file = new File("C:\Users\Tringapps-User24\eclipse-workspace\file\file.txt");
+        	File file = new File("C:\\Users\\Tringapps-User24\\Documents\\java\\file.txt");
            	Scanner sc = new Scanner(file);
            	while(sc.hasNextLine())
            	{
