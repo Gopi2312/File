@@ -12,7 +12,8 @@ public class MainFile
     	Map<String,Integer> map = new HashMap<>();
         try 
         {
-        	File file = new File("C:\\Users\\Tringapps-User24\\Documents\\java\\file.txt");
+            String url = "C:\\Users\\Tringapps-User24\\Documents\\java\\file.txt";
+        	File file = new File(url);
            	Scanner sc = new Scanner(file);
            	while(sc.hasNextLine())
            	{
