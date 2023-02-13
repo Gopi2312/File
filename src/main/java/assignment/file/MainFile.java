@@ -8,7 +8,7 @@ public class MainFile
     public static void main( String[] args )
     {
     	Logger logger = Logger.getLogger("hi");
-    	String str = "";
+    	StringBuilder str = new StringBuilder();
     	Map<String,Integer> map = new HashMap<>();
         try 
         {
@@ -17,7 +17,8 @@ public class MainFile
            	Scanner sc = new Scanner(file);
            	while(sc.hasNextLine())
            	{
-           		str = sc.nextLine();
+           		str.append(sc.nextLine());
+           		str.append(" ");
            	}
         }
         catch(Exception e)
@@ -25,7 +26,7 @@ public class MainFile
         	String s = ""+e;
         	logger.info(s);
         }
-        String[] str1 = str.split(" ");
+        String str1[] = str.toString().split(" ");
         for(int i =0;i<str1.length;i++)
         {
         	int count =1;
@@ -48,6 +49,9 @@ public class MainFile
             for (Map.Entry<String, Integer> e : map.entrySet()) {
                 queue.add(e);
             }
-           logger.log(Level.INFO,()-> " " + queue );
+           while(!queue.isEmpty())
+           {
+        	   logger.log(Level.INFO,()->"\n"+queue.poll());
+           }
     }
 }
