@@ -26,7 +26,7 @@ public class MainFile
         	String s = ""+e;
         	logger.info(s);
         }
-        String str1[] = str.toString().split(" ");
+        String[] str1 = str.toString().split(" ");
         for(int i =0;i<str1.length;i++)
         {
         	int count =1;
